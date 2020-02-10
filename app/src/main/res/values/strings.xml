@@ -1,0 +1,32 @@
+<resources>
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">Project 6 - News App</string>
+
+    <!-- Text to display in the list when there are no stories to be displayed [CHAR LIMIT=NONE] -->
+    <string name="no_story">No story found. Please check your API key and keywords in settings</string>
+
+    <!-- Error message when there is no internet connectivity [CHAR LIMIT=NONE] -->
+    <string name="no_internet_connection">No internet connection.</string>
+
+    <!-- Text to display in the settings menu item [CHAR LIMIT=NONE] -->
+    <string name="settings_menu_item">Settings</string>
+
+    <!-- Text to display in the settings menu settings title [CHAR LIMIT=NONE] -->
+    <string name="settings_title">News Story Settings</string>
+
+    <string name="settings_keyword">Story Keywords</string>
+    <string name="settings_keyword_key" translatable="false">keyword</string>
+    <string name="settings_keyword_default" translatable="false">world</string>
+
+    <string name="settings_api_key">API key</string>
+    <string name="settings_api_key_key" translatable="false">apikey</string>
+    <string name="settings_api_key_default" translatable="false">test</string>
+
+    <!-- Label for keyword [CHAR LIMIT=20] -->
+    <string name="settings_keyword_label">Keywords</string>
+    <string name="settings_keyword_value" translatable="false">keyword</string>
+
+    <!-- Label for API_key option [CHAR LIMIT=20] -->
+    <string name="settings_api_key_label">API key</string>
+    <string name="settings_api_key_value" translatable="false">apikey</string>
+</resources>
