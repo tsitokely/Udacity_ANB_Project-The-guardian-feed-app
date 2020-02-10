@@ -20,7 +20,7 @@
 
     <string name="settings_api_key">API key</string>
     <string name="settings_api_key_key" translatable="false">apikey</string>
-    <string name="settings_api_key_default" translatable="false">test</string>
+    <string name="settings_api_key_default" translatable="false">593143d6-b5a8-475b-8d0d-dbefa4880408</string>
 
     <!-- Label for keyword [CHAR LIMIT=20] -->
     <string name="settings_keyword_label">Keywords</string>

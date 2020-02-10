@@ -195,7 +195,7 @@ public class QueryUtils {
                 String author = fields.getString("byline");
 
                 // Extract the value for the key called "webUrl"
-                String url = fields.getString("webUrl");
+                String url = currentStory.getString("webUrl");
 
                 // Extract the value for the key called "webPublicationDate"
                 String datePublished = currentStory.getString("webPublicationDate");

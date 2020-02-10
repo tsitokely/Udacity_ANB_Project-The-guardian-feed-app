@@ -47,7 +47,6 @@ public class StoryLoader extends AsyncTaskLoader<List<Story>> {
     protected void onStartLoading() {
         forceLoad();
     }
-
     /**
      * This is on a background thread.
      */
