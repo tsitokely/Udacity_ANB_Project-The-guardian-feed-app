@@ -23,9 +23,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * An {@link StoryAdapter} knows how to create a list item layout for each story
@@ -87,21 +89,32 @@ public class StoryAdapter extends ArrayAdapter<Story> {
         // Display the section of the current story in that TextView
         authorView.setText(formattedAuthor);
 
-        // Create a new Date object from the time in milliseconds of the earthquake
+        // Create a new String date object from the String date time of the story
         String dateObject = currentStory.getDateTime();
 
         // Find the TextView with view ID date
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
-        // Format the date string (i.e. "Mar 3, 1984")
-        String formattedDate = formatDate(dateObject);
-        // Display the date of the current earthquake in that TextView
+        // Format the date string
+        String formattedDate = null;
+        try {
+            formattedDate = formatDate(dateObject);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        // Display the date of the current story in that TextView
         dateView.setText(formattedDate);
 
         // Find the TextView with view ID time
         TextView timeView = (TextView) listItemView.findViewById(R.id.time);
-        // Format the time string (i.e. "4:30PM")
-        String formattedTime = formatTime(dateObject);
-        // Display the time of the current earthquake in that TextView
+        // Format the time string
+        // Format the date string
+        String formattedTime = null;
+        try {
+        formattedTime = formatTime(dateObject);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        // Display the time of the current story in that TextView
         timeView.setText(formattedTime);
 
         // Return the list item view that is now showing the appropriate data
@@ -109,30 +122,24 @@ public class StoryAdapter extends ArrayAdapter<Story> {
     }
 
     /**
-     * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
+     * Return the formatted date string from a Date object.
      */
-    private String formatDate(String dateObject) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
-        Date date = new Date();
-        try {
-            date = dateFormat.parse(dateObject);
-        } catch (java.text.ParseException e) {
-            e.printStackTrace();
-        }
-        return date.toString();
+    private String formatDate(String dateObject) throws ParseException {
+        SimpleDateFormat formatSource = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        SimpleDateFormat formatGoal= new SimpleDateFormat("LLL dd, yyyy");
+        formatSource.setTimeZone(TimeZone.getTimeZone("Europe/London"));
+        Date date = formatSource.parse(dateObject);
+        return formatGoal.format(date);
     }
 
     /**
      * Return the formatted date string (i.e. "4:30 PM") from a Date object.
      */
-    private String formatTime(String dateObject) {
-        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
-        Date time = new Date();
-        try {
-            time = timeFormat.parse(dateObject);
-        } catch (java.text.ParseException e) {
-            e.printStackTrace();
-        }
-        return time.toString();
+    private String formatTime(String dateObject) throws ParseException {
+        SimpleDateFormat formatSource = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        SimpleDateFormat formatGoal= new SimpleDateFormat("h:mm a");
+        formatSource.setTimeZone(TimeZone.getTimeZone("Europe/London"));
+        Date date = formatSource.parse(dateObject);
+        return formatGoal.format(date);
     }
 }

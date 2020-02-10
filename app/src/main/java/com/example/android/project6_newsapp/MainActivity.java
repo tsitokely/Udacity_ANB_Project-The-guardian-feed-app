@@ -1,5 +1,4 @@
 package com.example.android.project6_newsapp;
-//https://content.guardianapis.com/search?order-by=newest&show-fields=byline&q=world&api-key=593143d6-b5a8-475b-8d0d-dbefa4880408
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.LoaderManager;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
         storyListView.setEmptyView(mEmptyStateTextView);
 
-        // Create a new adapter that takes an empty list of earthquakes as input
+        // Create a new adapter that takes an empty list of stories as input
         mAdapter = new StoryAdapter(this, new ArrayList<Story>());
 
         // Set the adapter on the {@link ListView}
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity
         storyListView.setAdapter(mAdapter);
 
         // Set an item click listener on the ListView, which sends an intent to a web browser
-        // to open a website with more information about the selected earthquake.
+        // to open a website with more information about the selected story.
         storyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
                 Uri storyUri = Uri.parse(currentStory.getUrl());
 
-                // Create a new intent to view the earthquake URI
+                // Create a new intent to view the story URI on the guardian website
                 Intent websiteIntent = new Intent(Intent.ACTION_VIEW, storyUri);
 
                 // Send the intent to launch a new activity
@@ -136,7 +135,9 @@ public class MainActivity extends AppCompatActivity
         uriBuilder.appendQueryParameter("order-by", "newest");
         uriBuilder.appendQueryParameter("show-fields", "byline");
         uriBuilder.appendQueryParameter("q", keyword);
-        uriBuilder.appendQueryParameter("api-key", apikey);
+        uriBuilder.appendQueryParameter("page-size", "20"); // we limited the result to 20 stories
+        uriBuilder.appendQueryParameter("api-key", apikey); // defaulted to my own api key
+
 
         // Create a new loader for the given URL
         return new StoryLoader(this, uriBuilder.toString());
@@ -148,10 +149,10 @@ public class MainActivity extends AppCompatActivity
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
 
-        // Set empty state text to display "No earthquakes found."
+        // Set empty state text to display "No story found."
         mEmptyStateTextView.setText(R.string.no_story);
 
-        // Clear the adapter of previous earthquake data
+        // Clear the adapter of previous story data
         mAdapter.clear();
 
         // If there is a valid list of {@link Story}s, then add them to the adapter's

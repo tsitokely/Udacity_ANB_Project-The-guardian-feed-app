@@ -63,10 +63,10 @@ public class QueryUtils {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
-        // Extract relevant fields from the JSON response and create a list of {@link Earthquake}s
+        // Extract relevant fields from the JSON response and create a list of {@link Story}s
         List<Story> stories = extractFeatureFromJson(jsonResponse);
 
-        // Return the list of {@link Earthquake}s
+        // Return the list of {@link Story}s
         return stories;
 
     }
@@ -113,7 +113,7 @@ public class QueryUtils {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the story JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -175,7 +175,7 @@ public class QueryUtils {
             // which represents a list of stories.
             JSONArray resultArray = response.getJSONArray("results");
 
-            // For each earthquake in the resultArray, create an {@link Story} object
+            // For each story in the resultArray, create an {@link Story} object
             for (int i = 0; i < resultArray.length(); i++) {
 
                 // Get a single story at position i within the list of stories
@@ -205,7 +205,7 @@ public class QueryUtils {
                 // and date time from the JSON response.
                 Story story = new Story(title, section, author, url,datePublished);
 
-                // Add the new {@link Earthquake} to the list of earthquakes.
+                // Add the new {@link Story} to the list of stories.
                 stories.add(story);
             }
 
@@ -213,10 +213,10 @@ public class QueryUtils {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
-            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+            Log.e("QueryUtils", "Problem parsing the story JSON results", e);
         }
 
-        // Return the list of earthquakes
+        // Return the list of stories
         return stories;
     }
 

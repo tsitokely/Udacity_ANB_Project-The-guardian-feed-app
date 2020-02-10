@@ -3,7 +3,7 @@
     <string name="app_name">Project 6 - News App</string>
 
     <!-- Text to display in the list when there are no stories to be displayed [CHAR LIMIT=NONE] -->
-    <string name="no_story">No story found. Please check your API key and keywords in settings</string>
+    <string name="no_story">No story found.Please check your settings (API or Keywords)</string>
 
     <!-- Error message when there is no internet connectivity [CHAR LIMIT=NONE] -->
     <string name="no_internet_connection">No internet connection.</string>
