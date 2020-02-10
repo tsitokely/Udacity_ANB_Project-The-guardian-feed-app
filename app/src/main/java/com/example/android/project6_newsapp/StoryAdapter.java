@@ -88,7 +88,7 @@ public class StoryAdapter extends ArrayAdapter<Story> {
         authorView.setText(formattedAuthor);
 
         // Create a new Date object from the time in milliseconds of the earthquake
-        Date dateObject = new Date(currentStory.getDateTime());
+        String dateObject = currentStory.getDateTime();
 
         // Find the TextView with view ID date
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
@@ -111,16 +111,28 @@ public class StoryAdapter extends ArrayAdapter<Story> {
     /**
      * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
      */
-    private String formatDate(Date dateObject) {
+    private String formatDate(String dateObject) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
-        return dateFormat.format(dateObject);
+        Date date = new Date();
+        try {
+            date = dateFormat.parse(dateObject);
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        return date.toString();
     }
 
     /**
      * Return the formatted date string (i.e. "4:30 PM") from a Date object.
      */
-    private String formatTime(Date dateObject) {
+    private String formatTime(String dateObject) {
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
-        return timeFormat.format(dateObject);
+        Date time = new Date();
+        try {
+            time = timeFormat.parse(dateObject);
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        return time.toString();
     }
 }
