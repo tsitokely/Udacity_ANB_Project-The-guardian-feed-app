@@ -36,6 +36,9 @@ import java.util.List;
  */
 public class StoryAdapter extends ArrayAdapter<Story> {
 
+    /** Tag for log messages */
+    private static final String LOG_TAG = StoryAdapter.class.getName();
+
     /**
      * Constructs a new {@link StoryAdapter}.
      *
