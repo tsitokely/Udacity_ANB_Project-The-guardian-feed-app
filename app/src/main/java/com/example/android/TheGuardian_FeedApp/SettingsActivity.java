@@ -1,4 +1,4 @@
-package com.example.android.project6_newsapp;
+package com.example.android.TheGuardian_FeedApp;
 
 import androidx.appcompat.app.AppCompatActivity;
 

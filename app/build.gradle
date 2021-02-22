@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.example.android.project6_newsapp"
+        applicationId "com.example.android.com.example.android.TheGuardian_FeedApp"
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1

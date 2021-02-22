@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.project6_newsapp">
+    package="com.example.android.TheGuardian_FeedApp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -18,7 +18,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.project6_newsapp.MainActivity"/>
+                android:value="com.example.android.TheGuardian_FeedApp.MainActivity"/>
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
