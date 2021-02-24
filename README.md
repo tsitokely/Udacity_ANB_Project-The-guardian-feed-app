@@ -10,7 +10,7 @@
 
 ## Screenshots
 
-[<img src="screenshots/Screenshot_16140197151.png" width=160>](screenshots/Screenshot_16140197151.png)
+[<img src="screenshots/Screenshot_1614019715.png" width=160>](screenshots/Screenshot_1614019715.png)
 [<img src="screenshots/Screenshot_1614019767.png" width=160>](screenshots/Screenshot_1614019767.png)
 [<img src="screenshots/Screenshot_1614019783.png" width=160>](screenshots/Screenshot_1614019783.png)
 
