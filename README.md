@@ -40,7 +40,8 @@ If you'd like to get involved, send me a message.
 ## Privacy Policy
 
 *Please note that we are not related to The guardian nor its affiliates.*
-*The guardian is a trademark from the guardian media group*
+
+*The guardian is a trademark of the guardian media group*
 
 ## License
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
