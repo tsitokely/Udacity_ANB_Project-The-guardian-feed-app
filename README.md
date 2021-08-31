@@ -24,7 +24,7 @@ This application use the standard API for the guardian.
 
 * Input your own guardian API for the app use
 * Specify your keywords
-* Watch a lot of story on the guardian
+* Watch a lot of stories on the guardian
 
 ## Installation and updates
 Please use Android Studio to compile the application.
